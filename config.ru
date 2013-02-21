@@ -16,4 +16,3 @@ use OmniAuth::Builder do
 end
 use AuthWrapper, :gds
 run KibanaApp
-

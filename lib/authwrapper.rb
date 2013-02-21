@@ -42,5 +42,8 @@ class AuthWrapper < Sinatra::Base
     redirect @redirect_to
   end
 
+  get "/auth/failure" do
+  end
+
 end
 
