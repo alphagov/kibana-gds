@@ -7,6 +7,3 @@ ENV["SIGNON_CLIENT_SECRET"] ="0324d981ffd8b1422fb51a453e22b4e08255d5920e841ea4eb
 
 # Added elasticsearch servers here. In case of more than one ["eserver1:9200", "eserver2:9200"]
 ENV["ELASTICSEARCH_SERVERS"] = "localhost:9200"
-
-# Port on which kibana should listen
-ENV["PORT"] = '5601'

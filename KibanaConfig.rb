@@ -9,7 +9,7 @@ module KibanaConfig
   ElasticsearchTimeout = 500
 
   # The port Kibana should listen on
-  KibanaPort = ENV["PORT"]
+  KibanaPort = 5601
 
   # The adress ip Kibana should listen on. Comment out or set to
   # 0.0.0.0 to listen on all interfaces.
