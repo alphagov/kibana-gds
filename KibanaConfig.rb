@@ -9,7 +9,7 @@ module KibanaConfig
   ElasticsearchTimeout = 500
 
   # The port Kibana should listen on
-  KibanaPort = 5601
+  KibanaPort = ENV["PORT"]
 
   # The adress ip Kibana should listen on. Comment out or set to
   # 0.0.0.0 to listen on all interfaces.
@@ -104,7 +104,7 @@ module KibanaConfig
   # Smart_index_pattern = 'logstash-%Y.%m.%d'
   # here is an example of how to set the pattern using an environment variable
   # Smart_index_pattern = ENV['SMART_INDEX'] ? ENV['SMART_INDEX'] : 'logstash-%Y.%m.%d'
-  Smart_index_pattern = 'logstash-%Y.%m.%d'
+  Smart_index_pattern = 'logs-%Y.%m.%d'
 
   # Number of seconds between each index. 86400 = 1 day.
   Smart_index_step = 86400

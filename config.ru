@@ -3,11 +3,13 @@ $:.unshift(File.expand_path(File.join(File.dirname(__FILE__), "lib")))
 
 require 'rubygems'
 require 'bundler'
+
+Bundler.require
+
 require 'envvar'
 require 'authwrapper'
 require 'kibana'
 
-Bundler.require
 
 use Rack::Session::Cookie, :secret => ENV["SECRET_KEY"]
 use OmniAuth::Builder do
