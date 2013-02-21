@@ -1,3 +1,5 @@
+require ::File.expand_path('../envvar',  __FILE__)
+
 module KibanaConfig
 
   # Your elastic search server(s). This may be set as an array for round robin
