@@ -1,15 +1,11 @@
-$:.unshift(File.expand_path(File.dirname(__FILE__), "lib"))
-$:.unshift(File.expand_path(File.join(File.dirname(__FILE__), "lib")))
-
 require 'rubygems'
 require 'bundler'
 
 Bundler.require
 
-require 'envvar'
-require 'authwrapper'
+require ::File.expand_path('../envvar',  __FILE__)
+require ::File.expand_path('../lib/authwrapper',  __FILE__)
 require 'kibana'
-
 
 use Rack::Session::Cookie, :secret => ENV["SECRET_KEY"]
 use OmniAuth::Builder do
