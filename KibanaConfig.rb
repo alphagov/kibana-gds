@@ -131,7 +131,7 @@ module KibanaConfig
   # field called _all that is searched when no field is specified.
   # Dropping _all can reduce index size significantly. If you do that
   # you'll need to change primary_field to be '@message'
-  Primary_field = '_all'
+  Primary_field = '@message'
 
   # Default Elastic Search index to query
   Default_index = '_all'
