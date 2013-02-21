@@ -4,8 +4,8 @@ $:.unshift(File.expand_path(File.join(File.dirname(__FILE__), "lib")))
 require 'rubygems'
 require 'bundler'
 require 'envvar'
-require 'kibana'
 require 'authwrapper'
+require 'kibana'
 
 Bundler.require
 

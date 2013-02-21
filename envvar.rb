@@ -4,3 +4,6 @@
 ENV["SIGNON_ROOT"] = "http://localhost:3000"
 ENV["SIGNON_CLIENT_ID"] = "3a31c225f7e7589991477da6fcf3df7eb5a060572d32ceb91ccf4b73f51717a6"
 ENV["SIGNON_CLIENT_SECRET"] ="0324d981ffd8b1422fb51a453e22b4e08255d5920e841ea4ebdfc8e29e7a1e1a"
+
+# Added elasticsearch servers here. In case of more than one ["eserver1:9200", "eserver2:9200"]
+ENV["ELASTICSEARCH_SERVERS"] = "localhost:9200"
