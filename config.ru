@@ -7,7 +7,7 @@ require ::File.expand_path('../envvar',  __FILE__)
 require ::File.expand_path('../lib/authwrapper',  __FILE__)
 require 'kibana'
 
-use Rack::Session::Cookie, :secret => ENV["SECRET_KEY"]
+use Rack::Session::Cookie
 use OmniAuth::Builder do
   provider :gds, ENV["SIGNON_CLIENT_ID"], ENV["SIGNON_CLIENT_SECRET"],
     :client_options => { :site => ENV["SIGNON_ROOT"],
