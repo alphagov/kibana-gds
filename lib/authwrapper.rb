@@ -9,11 +9,15 @@ class AuthWrapper < Sinatra::Base
 
     %w(get post).each do |method|
       self.class.send(method, callback_path) do
-        if request.env["omniauth.auth"]
+        payload = request.env.fetch("omniauth.auth", {})
+        payload_extra = payload.fetch("extra", {})
+        permissions = payload_extra.fetch("permissions", [])
+        if permissions.include?("signin")
           session[:authenticated] = true
+          redirect @redirect_to
+        else
+          redirect "/auth/unauthorized"
         end
-
-        redirect @redirect_to
       end
     end
   end
@@ -26,7 +30,7 @@ class AuthWrapper < Sinatra::Base
     if session[:authenticated]
       ["/auth/logout"]
     else
-      ["/auth/failure", callback_path]
+      ["/auth/failure", "/auth/unauthorized", callback_path]
     end
   end
 
@@ -47,6 +51,11 @@ class AuthWrapper < Sinatra::Base
   end
 
   get "/auth/failure" do
+    message = params["message"] or "unknown cause"
+    throw(:halt, [401, "Authentication failure: #{message}\n"])
+  end
+
+  get "/auth/unauthorized" do
     throw(:halt, [401, "Not authorized\n"])
   end
 
