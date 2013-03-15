@@ -22,15 +22,19 @@ class AuthWrapper < Sinatra::Base
     "/auth/#{@provider}/callback"
   end
 
+  def served_paths
+    if session[:authenticated]
+      ["/auth/logout"]
+    else
+      ["/auth/failure", callback_path]
+    end
+  end
+
   before do
-    # Don't protect callback path
-    return if request.path == callback_path
+    # Don't protect paths that the auth wrapper serves
+    return if served_paths.include? request.path
 
     if session[:authenticated]
-      # Don't protect logout path
-      return if request.path == "/auth/logout"
-
-      # Otherwise proceed to next app in stack
       forward
     else
       redirect "/auth/#{@provider}"
@@ -43,6 +47,7 @@ class AuthWrapper < Sinatra::Base
   end
 
   get "/auth/failure" do
+    throw(:halt, [401, "Not authorized\n"])
   end
 
 end
