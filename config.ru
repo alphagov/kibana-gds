@@ -7,8 +7,10 @@ require ::File.expand_path('../envvar',  __FILE__)
 require ::File.expand_path('../lib/authwrapper',  __FILE__)
 require 'kibana'
 
-use Rack::Session::Cookie, :key => 'rack.kibana_session',
-  :secret => ENV["SECRET_KEY"]
+use Rack::Session::Cookie,
+  :key => 'rack.kibana_session',
+  :secret => ENV["SECRET_KEY"],
+  :expire_after => 20 * 60 * 60 # gds-sso default expiry is 20h
 use OmniAuth::Builder do
   provider :gds, ENV["SIGNON_CLIENT_ID"], ENV["SIGNON_CLIENT_SECRET"],
     :client_options => { :site => ENV["SIGNON_ROOT"],
