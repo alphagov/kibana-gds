@@ -44,7 +44,11 @@ module KibanaConfig
 
   # Format for timestamps. Defaults to mm/dd HH:MM:ss.
   # For syntax see: http://blog.stevenlevithan.com/archives/date-time-format
-  Time_format = 'isoUtcDateTime'
+  #
+  # Do not use isoUtcDatetime or the "UTC:" prefix described in the above
+  # article, as timezone correction is already performed by the "Timezone"
+  # config variable.
+  Time_format = 'isoDateTime'
 
   # Change which fields are shown by default. Must be set as an array
   # Default_fields = ['@fields.vhost','@fields.response','@fields.request']
