@@ -8,7 +8,7 @@ module KibanaConfig
   Elasticsearch = ENV["ELASTICSEARCH_SERVERS"].split(",")
 
   #Set the Net::HTTP read/open timeouts for the connection to the ES backend
-  ElasticsearchTimeout = 500
+  ElasticsearchTimeout = 5
 
   # The port Kibana should listen on
   KibanaPort = 5601
@@ -24,9 +24,6 @@ module KibanaConfig
   # Elasticsearch = "#{es_ip}:#{es_port}"
   # KibanaPort = ENV['KIBANA_PORT'] ? ENV['KIBANA_PORT'] : 5601
   # KibanaHost = ENV['KIBANA_HOST'] ? ENV['KIBANA_HOST'] : 'localhost'
-
-  #Set the Net::HTTP read/open timeouts for the connection to the ES backend
-  ElasticsearchTimeout = 500
 
   # The record type as defined in your logstash configuration.
   # Seperate multiple types with a comma, no spaces. Leave blank
