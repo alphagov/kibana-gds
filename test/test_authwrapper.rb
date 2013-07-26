@@ -44,6 +44,18 @@ class AuthWrapperTest < Test::Unit::TestCase
     assert_equal "http://example.org/auth/unauthorized", last_response["Location"]
   end
 
+  def test_auth_failure
+    get "/auth/failure"
+    assert_equal 401, last_response.status
+    assert_equal "Authentication failure: unknown cause\n", last_response.body
+  end
+
+  def test_auth_failure_with_custom_message
+    get "/auth/failure?message=#{CGI.escape("terrible pain in all the diodes down my left side")}"
+    assert_equal 401, last_response.status
+    assert_equal "Authentication failure: terrible pain in all the diodes down my left side\n", last_response.body
+  end
+
   def test_success_with_signin_permission
     OmniAuth.config.add_mock(:gds, {:extra => {:permissions => ["signin"]}})
     get "/bar"
