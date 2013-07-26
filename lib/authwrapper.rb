@@ -51,8 +51,8 @@ class AuthWrapper < Sinatra::Base
   end
 
   get "/auth/failure" do
-    message = params["message"] or "unknown cause"
-    throw(:halt, [401, "Authentication failure: #{message}\n"])
+    message = params["message"] || "unknown cause"
+    throw(:halt, [401, "Authentication failure: #{ERB::Util.html_escape(message)}\n"])
   end
 
   get "/auth/unauthorized" do
