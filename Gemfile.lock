@@ -1,5 +1,12 @@
 GIT
-  remote: git@github.com:alphagov/Kibana.git
+  remote: git@github.com:alphagov/omniauth-gds.git
+  revision: 147d3a53897c51917642b5811244070107daa9c8
+  specs:
+    omniauth-gds (0.0.3)
+      omniauth-oauth2 (~> 1.0)
+
+GIT
+  remote: https://github.com/alphagov/Kibana.git
   revision: 90ce2c3ce5d3df3b3ee2135554d1c488607c1e84
   branch: kibana-ruby
   specs:
@@ -11,16 +18,10 @@ GIT
       thin
       tzinfo
 
-GIT
-  remote: git@github.com:alphagov/omniauth-gds.git
-  revision: 147d3a53897c51917642b5811244070107daa9c8
-  specs:
-    omniauth-gds (0.0.3)
-      omniauth-oauth2 (~> 1.0)
-
 GEM
   remote: http://rubygems.org/
   specs:
+    atomic (1.1.14)
     daemons (1.1.9)
     eventmachine (1.0.3)
     faraday (0.8.5)
@@ -28,7 +29,7 @@ GEM
     fastercsv (1.5.5)
     hashie (1.2.0)
     httpauth (0.2.0)
-    json (1.8.0)
+    json (1.8.1)
     jwt (0.1.5)
       multi_json (>= 1.0)
     kgio (2.8.0)
@@ -47,21 +48,24 @@ GEM
       oauth2 (~> 0.8.0)
       omniauth (~> 1.0)
     rack (1.5.2)
-    rack-protection (1.5.0)
+    rack-protection (1.5.1)
       rack
     rack-test (0.6.2)
       rack (>= 1.0)
     raindrops (0.10.0)
-    sinatra (1.4.2)
-      rack (~> 1.5, >= 1.5.2)
+    sinatra (1.4.4)
+      rack (~> 1.4)
       rack-protection (~> 1.4)
       tilt (~> 1.3, >= 1.3.4)
-    thin (1.5.1)
+    thin (1.6.1)
       daemons (>= 1.0.9)
-      eventmachine (>= 0.12.6)
+      eventmachine (>= 1.0.0)
       rack (>= 1.0.0)
+    thread_safe (0.1.3)
+      atomic
     tilt (1.4.1)
-    tzinfo (0.3.37)
+    tzinfo (1.1.0)
+      thread_safe (~> 0.1)
     unicorn (4.6.1)
       kgio (~> 2.6)
       rack
