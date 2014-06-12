@@ -1,11 +1,4 @@
 GIT
-  remote: git@github.com:alphagov/omniauth-gds.git
-  revision: 147d3a53897c51917642b5811244070107daa9c8
-  specs:
-    omniauth-gds (0.0.3)
-      omniauth-oauth2 (~> 1.0)
-
-GIT
   remote: https://github.com/alphagov/Kibana.git
   revision: 90ce2c3ce5d3df3b3ee2135554d1c488607c1e84
   branch: kibana-ruby
@@ -17,6 +10,13 @@ GIT
       sinatra
       thin
       tzinfo
+
+GIT
+  remote: https://github.com/alphagov/omniauth-gds.git
+  revision: 147d3a53897c51917642b5811244070107daa9c8
+  specs:
+    omniauth-gds (0.0.3)
+      omniauth-oauth2 (~> 1.0)
 
 GEM
   remote: http://rubygems.org/
