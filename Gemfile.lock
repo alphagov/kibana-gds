@@ -16,7 +16,7 @@ GEM
     jwt (0.1.5)
       multi_json (>= 1.0)
     kgio (2.8.0)
-    kibana-rack (0.1.0)
+    kibana-rack (0.1.1)
       faraday
       sinatra
       sinatra-contrib
