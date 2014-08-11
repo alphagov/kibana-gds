@@ -21,6 +21,7 @@ use AuthWrapper, :gds
 
 Kibana.configure do |config|
   config.elasticsearch_host = ENV["ES_HOST"]
+  config.kibana_dashboards_path = File.expand_path('../dashboards', __FILE__)
 end
 
 map('/kibana') { run Kibana::Rack::Web }
