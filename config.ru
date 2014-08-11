@@ -5,7 +5,7 @@ Bundler.require
 
 require ::File.expand_path('../envvar',  __FILE__)
 require ::File.expand_path('../lib/authwrapper',  __FILE__)
-require 'kibana'
+require 'kibana/rack'
 
 use Rack::Session::Cookie,
   :key => 'rack.kibana_session',
@@ -18,4 +18,4 @@ use OmniAuth::Builder do
                          :token_url => "#{ENV["SIGNON_ROOT"]}/oauth/access_token" }
 end
 use AuthWrapper, :gds
-run KibanaApp
+map('/kibana') { run Kibana::Rack::Web }
