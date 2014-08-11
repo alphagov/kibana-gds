@@ -1,17 +1,4 @@
 GIT
-  remote: https://github.com/alphagov/Kibana.git
-  revision: 90ce2c3ce5d3df3b3ee2135554d1c488607c1e84
-  branch: kibana-ruby
-  specs:
-    kibana (0.2.0)
-      daemons
-      fastercsv
-      json
-      sinatra
-      thin
-      tzinfo
-
-GIT
   remote: https://github.com/alphagov/omniauth-gds.git
   revision: 147d3a53897c51917642b5811244070107daa9c8
   specs:
@@ -21,18 +8,18 @@ GIT
 GEM
   remote: http://rubygems.org/
   specs:
-    atomic (1.1.14)
-    daemons (1.1.9)
-    eventmachine (1.0.3)
+    backports (3.6.0)
     faraday (0.8.5)
       multipart-post (~> 1.1)
-    fastercsv (1.5.5)
     hashie (1.2.0)
     httpauth (0.2.0)
-    json (1.8.1)
     jwt (0.1.5)
       multi_json (>= 1.0)
     kgio (2.8.0)
+    kibana-rack (0.1.0)
+      faraday
+      sinatra
+      sinatra-contrib
     multi_json (1.6.1)
     multipart-post (1.1.5)
     oauth2 (0.8.1)
@@ -48,24 +35,23 @@ GEM
       oauth2 (~> 0.8.0)
       omniauth (~> 1.0)
     rack (1.5.2)
-    rack-protection (1.5.1)
+    rack-protection (1.5.3)
       rack
     rack-test (0.6.2)
       rack (>= 1.0)
     raindrops (0.10.0)
-    sinatra (1.4.4)
+    sinatra (1.4.5)
       rack (~> 1.4)
       rack-protection (~> 1.4)
       tilt (~> 1.3, >= 1.3.4)
-    thin (1.6.1)
-      daemons (>= 1.0.9)
-      eventmachine (>= 1.0.0)
-      rack (>= 1.0.0)
-    thread_safe (0.1.3)
-      atomic
+    sinatra-contrib (1.4.2)
+      backports (>= 2.0)
+      multi_json
+      rack-protection
+      rack-test
+      sinatra (~> 1.4.0)
+      tilt (~> 1.3)
     tilt (1.4.1)
-    tzinfo (1.1.0)
-      thread_safe (~> 0.1)
     unicorn (4.6.1)
       kgio (~> 2.6)
       rack
@@ -75,7 +61,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  kibana!
+  kibana-rack
   omniauth-gds!
   rack-test
   unicorn

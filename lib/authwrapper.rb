@@ -2,7 +2,7 @@ require "sinatra/base"
 
 class AuthWrapper < Sinatra::Base
 
-  def initialize(app, provider, redirect_to="/")
+  def initialize(app, provider, redirect_to="/kibana")
     super(app)
     @provider = provider
     @redirect_to = redirect_to
@@ -43,6 +43,10 @@ class AuthWrapper < Sinatra::Base
     else
       redirect "/auth/#{@provider}"
     end
+  end
+
+  get "/" do
+    redirect @redirect_to
   end
 
   get "/auth/logout" do
