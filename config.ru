@@ -18,4 +18,9 @@ use OmniAuth::Builder do
                          :token_url => "#{ENV["SIGNON_ROOT"]}/oauth/access_token" }
 end
 use AuthWrapper, :gds
+
+Kibana.configure do |config|
+  config.elasticsearch_host = ENV["ES_HOST"]
+end
+
 map('/kibana') { run Kibana::Rack::Web }
