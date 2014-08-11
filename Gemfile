@@ -1,6 +1,6 @@
-source "http://rubygems.org"
+source "https://rubygems.org"
 
-gem 'omniauth-gds', :git => 'https://github.com/alphagov/omniauth-gds.git'
+gem 'omniauth-gds', '~> 3.1'
 gem 'kibana-rack'
 gem 'unicorn'
 
