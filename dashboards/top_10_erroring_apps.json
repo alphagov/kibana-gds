@@ -46,7 +46,7 @@
         {
           "error": false,
           "span": 12,
-          "editable": false,
+          "editable": true,
           "type": "terms",
           "loadingEditor": false,
           "field": "@fields.application",
