@@ -4,7 +4,7 @@
     "query": {
       "list": {
         "0": {
-          "query": "@fields.status: [500 TO 599] AND NOT @tags:nginx AND NOT @fields.application:\"govuk-cdn-logs-monitor\"",
+          "query": "@fields.status: [500 TO 599] AND @tags:application AND NOT @fields.application:\"govuk-cdn-logs-monitor\"",
           "alias": "",
           "color": "#7EB26D",
           "id": 0,
