@@ -6,6 +6,10 @@ Bundler.require
 require ::File.expand_path('../lib/authwrapper',  __FILE__)
 require 'kibana/rack'
 
+if ENV['SECRET_KEY'] == nil or ENV['SECRET_KEY'] == ''
+  raise 'SECRET_KEY environment variable must be set'
+end
+
 use Rack::Session::Cookie,
   :key => 'rack.kibana_session',
   :secret => ENV["SECRET_KEY"],
