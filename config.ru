@@ -3,7 +3,6 @@ require 'bundler'
 
 Bundler.require
 
-require ::File.expand_path('../envvar',  __FILE__)
 require ::File.expand_path('../lib/authwrapper',  __FILE__)
 require 'kibana/rack'
 
