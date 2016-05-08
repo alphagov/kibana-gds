@@ -1,13 +1,15 @@
-kibana-gds
-==========
+# kibana-gds
 
-Initializes kibana app behind signon
+This is a wrapper that initialises [Kibana][] behind GOV.UK's [Signon][].
 
-Dev Box Setup
--------------
+## Development
 
-To get this running on your local machine
-* You would need to have signonotron2 application running
-* Also you would need to generate the oauth_id and oauth_secret for the
-application and update envvar.rb
-* `rackup config.ru` to run the app then
+To get this running on your local machine:
+
+- Run the [Signon][] app
+- Generate an OAuth client ID and secret in Signon and pass them to this
+  app as environment variables
+- Run this app with `rackup config.ru`
+
+[Kibana]: https://www.elastic.co/products/kibana
+[Signon]: https://github.com/alphagov/signonotron2/
