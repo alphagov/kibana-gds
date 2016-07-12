@@ -1,5 +1,5 @@
 {
-  "title": "Logstash Search",
+  "title": "GOV.UK logs",
   "services": {
     "query": {
       "list": {
@@ -35,6 +35,27 @@
     }
   },
   "rows": [
+    {
+      "title": "Help",
+      "height": "80px",
+      "editable": false,
+      "collapse": false,
+      "collapsable": true,
+      "panels": [
+        {
+          "error": false,
+          "span": 12,
+          "editable": false,
+          "type": "text",
+          "loadingEditor": false,
+          "mode": "markdown",
+          "content": "GOV.UK logs are made available here using [Kibana](https://www.elastic.co/products/kibana). There are some [useful queries in the opsmanual](https://github.gds/pages/gds/opsmanual/2nd-line/kibana.html).",
+          "style": {},
+          "title": "Kibana documentation"
+        }
+      ],
+      "notice": false
+    },
     {
       "title": "Graph",
       "height": "350px",
