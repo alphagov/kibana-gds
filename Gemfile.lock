@@ -6,7 +6,7 @@ GEM
       multipart-post (>= 1.2, < 3)
     hashie (3.2.0)
     jwt (1.0.0)
-    kgio (2.8.0)
+    kgio (2.10.0)
     kibana-rack (0.1.4)
       faraday (~> 0.9)
       sinatra (~> 1.4)
@@ -36,7 +36,7 @@ GEM
       rack
     rack-test (0.6.2)
       rack (>= 1.0)
-    raindrops (0.10.0)
+    raindrops (0.17.0)
     sinatra (1.4.5)
       rack (~> 1.4)
       rack-protection (~> 1.4)
@@ -58,8 +58,13 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  kgio (>= 2.9.2)
   kibana-rack
   omniauth-gds (~> 3.1)
   rack (= 1.5.4)
   rack-test
+  raindrops (>= 0.13.0)
   unicorn
+
+BUNDLED WITH
+   1.10.6
