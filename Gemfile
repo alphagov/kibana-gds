@@ -10,7 +10,7 @@ gem 'rack', '1.5.4'
 gem 'kgio', '>= 2.9.2'
 gem 'raindrops', '>= 0.13.0'
 
-group :development do
+group :test do
   gem 'rack-test'
   gem 'test-unit'
 end
