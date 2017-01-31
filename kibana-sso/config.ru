@@ -4,7 +4,6 @@ require 'bundler'
 Bundler.require
 
 require ::File.expand_path('../lib/authwrapper',  __FILE__)
-require 'kibana/rack'
 
 if ENV['SECRET_KEY'] == nil or ENV['SECRET_KEY'] == ''
   raise 'SECRET_KEY environment variable must be set'
@@ -22,9 +21,4 @@ use OmniAuth::Builder do
 end
 use AuthWrapper, :gds
 
-Kibana.configure do |config|
-  config.elasticsearch_host = ENV["ES_HOST"]
-  config.kibana_dashboards_path = File.expand_path('../dashboards', __FILE__)
-end
-
-map('/kibana') { run Kibana::Rack::Web }
+system("/usr/local/bin/kibana-docker")
